@@ -107,24 +107,45 @@ console.log(`Find a value in an array`, find());
 // ----------------------
 // 8. Function to check if a letter is the first letter in a 
 //    string. Return true if it is, and false otherwise
-function isFirstLetter(letter, string) {
 
+let word = 'apple, oranges, cherry';
+function isFirstLetter(letter, string) {
+  if (word.charAt(0)) {
+    return true;
+  } else {
+    return false;
+  }
 }
+isFirstLetter();
 console.log( 'isFirstLetter - should say true', isFirstLetter('a', 'apple') );
 console.log( 'isFirstLetter - should say false', isFirstLetter('z', 'apple') );
 
 // 9. Function to return the sum of all numbers in an array
-function sumAll( ) {
+function sumAll(array) {
   let sum = 0
+  for (let i = 0; i < array.length; i++) {
+    sum += array[i]
+  }
   // TODO: loop to add items
-  return sum;
+console.log('sum of all numbers in an array', sum);
+return sum 
 }
+sumAll([3, 6, 5, 7, 2]);
 
 // 10. Function to return a new array of all positive (greater than zero)
 //     numbers contained in an input array. If there are no positive numbers
 //     return an empty array. Note: The input array should not change.
-
-
+let nums = [-4, 5, -3, -6, 3, 7];
+function printPositives(array) {
+  let pos = [];
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] > 0) {
+      pos.push(array[i]);
+  } 
+}
+  return pos;
+} 
+console.log('return a new array of all positive numbers', printPositives(nums));
 
 // 11. Pick a problem from Edabit(https://edabit.com/) or 
 //     CodeWars(https://www.codewars.com/). Then describe it 
