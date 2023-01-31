@@ -90,16 +90,16 @@ console.log(`Empty list, expect undefined`, getLast([]));
 //    value is found and false otherwise. Use a loop;
 //    DO NOT use Array.includes, Array.indexOf, or Array.find 
 function find(value, array) {
-  let i = find.length;
-  while(i--) {
-    if (find[i] === value) {
+  for (let item of array) {
+    if(value == item) {
       return true;
+    } else {
+      return false
     }
   }
-  return false;
-} 
-find();
-console.log(`Find a value in an array`, find());
+}
+//find();
+console.log(`Find a value in an array`, find(10, list));
 
 
 // ----------------------
@@ -108,17 +108,23 @@ console.log(`Find a value in an array`, find());
 // 8. Function to check if a letter is the first letter in a 
 //    string. Return true if it is, and false otherwise
 
-let word = 'apple, oranges, cherry';
-function isFirstLetter(letter, string) {
-  if (word.charAt(0)) {
-    return true;
-  } else {
-    return false;
-  }
+/*function isFirstLetter(letter, string) {
+	return letter === string[0] ? true : false;
 }
-isFirstLetter();
-console.log( 'isFirstLetter - should say true', isFirstLetter('a', 'apple') );
-console.log( 'isFirstLetter - should say false', isFirstLetter('z', 'apple') );
+console.log("isFirstLetter - should say true", isFirstLetter("a", "apple"));
+console.log("isFirstLetter - should say false", isFirstLetter("z", "apple"));*/
+
+function isFirstLetter(letter, string) {
+	if (letter === string[0]) {
+		return true;
+	} else {
+		return false;
+	}
+}
+console.log("isFirstLetter - should say true", isFirstLetter("a", "apple"));
+console.log("isFirstLetter - should say false", isFirstLetter("z", "apple"));
+
+
 
 // 9. Function to return the sum of all numbers in an array
 function sumAll(array) {
@@ -126,11 +132,9 @@ function sumAll(array) {
   for (let i = 0; i < array.length; i++) {
     sum += array[i]
   }
-  // TODO: loop to add items
-console.log('sum of all numbers in an array', sum);
-return sum 
+  return sum 
 }
-sumAll([3, 6, 5, 7, 2]);
+console.log('sum all numbers in an array', sumAll([3, 6, 5, 7, 2]));
 
 // 10. Function to return a new array of all positive (greater than zero)
 //     numbers contained in an input array. If there are no positive numbers
@@ -150,3 +154,13 @@ console.log('return a new array of all positive numbers', printPositives(nums));
 // 11. Pick a problem from Edabit(https://edabit.com/) or 
 //     CodeWars(https://www.codewars.com/). Then describe it 
 //     here in a comment, write the function, and test it!
+
+// Creating a function that takes two numbers as arguments and returns their sum.
+
+function multiplication(firstNumber, secondNumber) {
+firstNumber = 6
+secondNumber = 5
+   return firstNumber * secondNumber;
+}
+multiplication()
+console.log('return sum of two numbers', multiplication())
